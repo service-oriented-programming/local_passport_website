@@ -18,7 +18,6 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// Login
 router.get("/login", (req, res) => {
   res.render("login");
 });
@@ -31,7 +30,6 @@ router.post(
   })
 );
 
-// Profile (protected route)
 router.get("/profile", isAuthenticated, (req, res) => {
   res.render("profile", { user: req.user });
 });
